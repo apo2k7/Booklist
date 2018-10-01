@@ -4,7 +4,6 @@ namespace Microsoft.EntityFrameworkCore
 {
   public static class ModelBuilderExtension
   {
-
     /// <summary>
     /// Relational configuration for Books and Authors
     /// </summary>

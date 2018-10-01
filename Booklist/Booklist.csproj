@@ -14,7 +14,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\DataManagment\DataManagment.csproj" />
-    <ProjectReference Include="..\Extensions\Extensions.csproj" />
     <ProjectReference Include="..\Tools\Tools.csproj" />
   </ItemGroup>
 

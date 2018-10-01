@@ -13,8 +13,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Booklist.Test", "Test\Bookl
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataManagment.Test", "Test\DataManagment.Test\DataManagment.Test.csproj", "{5971388F-999D-4C12-87D2-52385AD9821F}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Extensions", "Extensions\Extensions.csproj", "{E9EF2532-26E5-4C35-847A-1A64C4B3902F}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tools", "Tools\Tools.csproj", "{7FC1AFC7-B3FA-4F03-825F-757197F34BBE}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Extensions.Test", "Test\Extensions.Test\Extensions.Test.csproj", "{4DCA177B-7940-45F1-A01F-112A28E662CF}"
@@ -45,10 +43,6 @@ Global
 		{5971388F-999D-4C12-87D2-52385AD9821F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5971388F-999D-4C12-87D2-52385AD9821F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5971388F-999D-4C12-87D2-52385AD9821F}.Release|Any CPU.Build.0 = Release|Any CPU
-		{E9EF2532-26E5-4C35-847A-1A64C4B3902F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E9EF2532-26E5-4C35-847A-1A64C4B3902F}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{E9EF2532-26E5-4C35-847A-1A64C4B3902F}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{E9EF2532-26E5-4C35-847A-1A64C4B3902F}.Release|Any CPU.Build.0 = Release|Any CPU
 		{7FC1AFC7-B3FA-4F03-825F-757197F34BBE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{7FC1AFC7-B3FA-4F03-825F-757197F34BBE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7FC1AFC7-B3FA-4F03-825F-757197F34BBE}.Release|Any CPU.ActiveCfg = Release|Any CPU
