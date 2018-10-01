@@ -1,11 +1,7 @@
 .vs
 .vscode
+*/bin
+*/obj
+/Test/*/bin
+/Test/*/obj
 /Booklist/node_modules
-/Booklist/bin
-/Booklist/obj
-/DataManagment/bin
-/DataManagment/obj
-/Test/Booklist.Test/bin
-/Test/Booklist.Test/obj
-/Test/DataManagment.Test/bin
-/Test/DataManagment.Test/obj
