@@ -1,0 +1,11 @@
+{
+  "name": "booklist",
+  "version": "0.2.0",
+  "description": "Booklist application",
+  "keywords": [],
+  "author": "Fabian Hoster",
+  "license": "ISC",
+  "devDependencies": {
+    "node-sass": "^4.9.3"
+  }
+}

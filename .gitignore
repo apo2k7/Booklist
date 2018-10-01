@@ -1,6 +1,6 @@
 .vs
 .vscode
-/node_modules
+/Booklist/node_modules
 /Booklist/bin
 /Booklist/obj
 /DataManagment/bin
