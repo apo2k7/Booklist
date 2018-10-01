@@ -1,0 +1,42 @@
+html {
+	width: 100%;
+}
+body {
+	width: 100%;
+	background: url('../images/HomeBackGround.jpg') no-repeat center center fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+
+.index-info {
+	background-color: rgba(250, 235, 215, 0.199);
+	margin: 25% 35% 0 7.5%;
+	border-radius: 3em;
+	color: #1f1f1f;
+
+	div {
+		margin: 30px;
+		h1 {
+			font-size: 7.5rem;
+		}
+		p {
+			font-size: 4rem;
+		}
+	}
+
+	@media (max-width: 991.98px) {
+		margin: 60% 2.5% 0 2.5%;
+
+		div {
+			margin: 20px;
+			h1 {
+				font-size: 4.5rem;
+			}
+			p {
+				font-size: 2rem;
+			}
+		}
+	}
+}

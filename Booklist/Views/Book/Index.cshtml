@@ -1,0 +1,61 @@
+@model BooksViewModel
+
+<div class="book-table-wrapper ">
+    
+    <a href="/book/edit" class="btn btn-large btn-primary m-30 btn-lg " style="width: 150px;">Create</a>
+    
+    <div class="table-wrapper">
+        <table id="bookTable" class="table">
+            <thead class="thead-dark">
+                <tr>
+                    <th >Titel</th>
+                    <th >Serie</th>
+                    <th >Seriennummer</th>
+                    <th >Verlag</th>
+                    <th >Authoren</th>
+                    <th ></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var book in Model.Books)
+                {
+                    <tr>
+                        <td>@book.Titel</td>
+                        <td>@book.Series</td>
+                        <td>@book.Seriesnumber</td>
+                        <td>@book.Publisher?.Name</td>
+                        <td>@book.GetAuthorString()</td>
+                        <td>
+                            <div class="btn-group">
+                                <a class="btn btn-secondary" href="/book/edit/@book.Id"><i class="fa fa-edit"></i></a>
+                                <a class="btn btn-danger" href="/book/delete/@book.Id"><i class="fa fa-trash-alt"></i></a>
+                            </div>
+                        </td>
+                    </tr>
+                } 
+            </tbody>
+        </table>
+    </div>
+</div>
+
+@section Scripts {
+    <Script>
+        $(document).ready( function () {
+            let table = $('#bookTable').DataTable({
+                searching: true,
+                lengthChange: true,
+                scrollY: "65vh",
+                scrollCollapse: false,
+                columns: [
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    { orderable: false, searchable:false }
+                ]
+            });
+        });
+    </Script>
+}
+

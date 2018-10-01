@@ -1,0 +1,82 @@
+@using Models
+@model BookEditViewModel
+
+<form asp-action="edit">
+<input asp-for="Edit" hidden>
+    <div class="row">
+        <div class="col-md-6">
+            <section class="borderd-section">
+                <h3>Book</h3>
+                <div class="form-group">
+                    <div class="form-group">
+                        <label asp-for="Titel" for="Titel"></label>
+                        <input asp-for="Titel" class="form-control" placeholder="Titel">
+                        <span asp-validation-for="Titel" class="text-danger"></span>
+                    </div>  
+                    <div class="form-group">
+                        <label asp-for="Subtitel" for="Subtitel"></label>
+                        <input asp-for="Subtitel" class="form-control" placeholder="Subtitel">
+                        <span asp-validation-for="Subtitel" class="text-danger"></span>
+                    </div>  
+                    <div class="form-group">
+                        <label asp-for="Series" for="Series"></label>
+                        <input asp-for="Series" class="form-control" placeholder="Series">
+                        <span asp-validation-for="Series" class="text-danger"></span>
+                    </div>  
+                    <div class="form-group">
+                        <label asp-for="Seriesnumber" for="Seriesnumber"></label>
+                        <input asp-for="Seriesnumber" class="form-control" placeholder="Seriesnumber">
+                        <span asp-validation-for="Seriesnumber" class="text-danger"></span>
+                    </div> 
+                    <div class="form-group">
+                        <label asp-for="Isbn" for="Isbn"></label>
+                        <input asp-for="Isbn" class="form-control" placeholder="Isbn">
+                        <span asp-validation-for="Isbn" class="text-danger"></span>
+                    </div> 
+                </div>
+            </section>
+        </div>
+        <div class="col-md-6">
+            <section class="borderd-section">
+                <h3>Author</h3>
+                <div class="form-group">
+                    <label asp-for="AuthorName" for="AuthorName"></label>
+                    <input asp-for="AuthorName" class="form-control" placeholder="AuthorName">
+                    <span asp-validation-for="AuthorName" class="text-danger"></span>
+                </div>  
+            </section>
+            <section class="borderd-section">
+                <h3>Genre</h3>
+                <div class="form-group">
+                    <label asp-for="Genre" for="Genre"></label>
+                    @*<select class="selectpicker"  asp-for="Genre" asp-items="Html.GetEnumSelectList<Genre>()" multiple data-width="100%"></select>*@
+                    <span asp-validation-for="Genre" class="text-danger"></span>
+                </div>  
+            </section>
+
+            <section class="borderd-section">
+                <h3>Publisher</h3>
+                <div class="form-group">
+                    <label asp-for="PublisherName" for="PublisherName"></label>
+                    <input asp-for="PublisherName" class="form-control" placeholder="PublisherName">
+                    <span asp-validation-for="PublisherName" class="text-danger"></span>
+                </div>  
+            </section>
+            <section class="borderd-section">
+                <h3>Publisher</h3>
+                <div class="custom-control custom-checkbox m-10">
+                    <input class="custom-control-input" asp-for="Ebook" id="Ebook" type="checkbox">
+                    <label class="custom-control-label" asp-for="Ebook" for="Ebook"></label>
+                </div>  
+                <div class="custom-control custom-checkbox m-10">
+                    <input class="custom-control-input" asp-for="Lent" id="Lent" type="checkbox">
+                    <label class="custom-control-label" asp-for="Lent" for="Lent"></label>
+                </div> 
+            </section>
+        </div>
+    </div>
+    <div class="m-50">
+        <button type="submit" class="btn btn-primary btn-lg float-right m-10" style="width: 150px;">Save</button>
+        <a href="/book" class="btn btn-secondary btn-lg float-right m-10" style="width: 150px;">Cancle</a>
+    </div>
+</form>

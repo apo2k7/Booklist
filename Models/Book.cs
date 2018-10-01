@@ -3,10 +3,11 @@ using System.Linq;
 using System.Collections.Generic;
 using Models.Relations;
 using Microsoft.AspNetCore.Identity;
+using Models.Base;
 
 namespace Models
 {
-  public class Book
+  public class Book : BaseModel
   {
     public Book()
     {

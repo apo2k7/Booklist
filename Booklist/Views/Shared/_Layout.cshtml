@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>
+        @ViewBag.Title  Booklist
+    </title>
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" type="text/css" media="screen" href="/css/index.css" />
+    <link rel='stylesheet' href="\node_modules\bootstrap\dist\css\bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs4/dt-1.10.18/fh-3.1.4/datatables.min.css"/> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.2/css/bootstrap-select.min.css">
+</head>
+
+<body>
+    <partial name="_Nav"/>
+    
+    <div class='container-fluid'>
+        @RenderBody()
+    </div>
+
+    <div id="scripts">   
+        <environment include="Development">
+            <script src="\node_modules\jquery\dist\jquery.min.js"></script>
+            <script src="\node_modules\bootstrap\dist\js\bootstrap.bundle.min.js"></script>
+            <script type="text/javascript" src="https://cdn.datatables.net/v/bs4/dt-1.10.18/fh-3.1.4/datatables.min.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.2/js/bootstrap-select.min.js"></script>
+        </environment>
+        <environment exclude="Development">
+        <script type="text/javascript" src="https://cdn.datatables.net/v/bs4/dt-1.10.18/fh-3.1.4/datatables.min.js"></script>
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+            asp-fallback-src="\node_modules\jquery\dist\jquery.min.js"
+            asp-fallback-test="window.jQuery"
+            crossorigin="anonymous"
+            integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=">
+        </script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.2/js/bootstrap-select.min.js"></script>
+        </environment>
+        @RenderSection("scripts", required: false)
+    </div>
+</body>
+</html>

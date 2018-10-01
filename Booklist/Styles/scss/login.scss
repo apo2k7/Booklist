@@ -1,0 +1,73 @@
+.main-login-div {
+	background: #ffffff none repeat scroll 0 0;
+	border-radius: 1em;
+	margin: 10em auto;
+	max-width: 38%;
+	padding: 70px;
+
+	@media (max-width: 991.98px) {
+		max-width: 100%;
+		padding: 30px;
+	}
+}
+
+.btn-social {
+	border-radius: 50%;
+	color: #ffffff !important;
+	display: inline-block;
+	height: 50px;
+	width: 50px;
+	line-height: 50px;
+	margin: 8px 4px;
+	text-align: center;
+	text-decoration: none;
+	transition: background-color 0.3s;
+	&:hover &:focus {
+		color: #fff;
+		outline: none;
+		text-decoration: none;
+	}
+}
+
+.facebook {
+	background-color: #3b5998;
+}
+
+.xing {
+	background-color: #126567;
+}
+
+.twitter {
+	background-color: #0084b4;
+}
+
+.google {
+	background-color: #ffa700;
+}
+
+.login-form {
+	text-align: center;
+
+	.form-group {
+		margin-bottom: 10px;
+	}
+
+	.forgot {
+		text-align: left;
+		margin-bottom: 30px;
+	}
+
+	button {
+		width: 75%;
+		margin-top: 15px;
+	}
+	.panel {
+		h2 {
+			margin-bottom: 0 0 8px 0;
+		}
+		p {
+			margin-bottom: 30px;
+			line-height: 24px;
+		}
+	}
+}

@@ -1,10 +1,11 @@
 ﻿using Models;
 using Microsoft.EntityFrameworkCore;
 using System.Threading.Tasks;
+using DataManagment.Database.Contracts;
 
 namespace DataManagment.Database
 {
-  public class ApplicationDbContext : DbContext
+  public class ApplicationDbContext : DbContext, IApplicationContext
   {
     public DbSet<Author> Authors { get; private set; }
     public DbSet<Book> Books { get; private set; }

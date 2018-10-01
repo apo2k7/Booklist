@@ -2,6 +2,7 @@
 using Models.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using DataManagment.Database.Contracts;
 
 // Customize the ASP.NET Identity model and override the defaults if needed.
 // For example, you can rename the ASP.NET Identity table names and more.
@@ -10,7 +11,7 @@ using Microsoft.EntityFrameworkCore;
 namespace DataManagment.Database
 {
 
-  public class IdentityAppDbContext : IdentityDbContext<ApplicationUser, ApplicationRole, Guid>
+  public class IdentityAppDbContext : IdentityDbContext<ApplicationUser, ApplicationRole, Guid>, IIdentityContext
   {
     public IdentityAppDbContext(DbContextOptions<IdentityAppDbContext> options)
         : base(options)

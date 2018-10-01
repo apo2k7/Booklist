@@ -1,10 +1,11 @@
 ﻿using System;
-using Models.Identity;
-using DataManagment.Database;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Configuration;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Models.Identity;
+using DataManagment.Database;
+using DataManagment.Services;
+using DataManagment.Services.Contracts;
 
 namespace Microsoft.Extensions.DependencyInjection
 {
@@ -31,6 +32,13 @@ namespace Microsoft.Extensions.DependencyInjection
     public static void AddDbContexts(this IServiceCollection services, Action<DbContextOptionsBuilder> options){
       services.AddDbContext<IdentityAppDbContext>(options);
       services.AddDbContext<ApplicationDbContext>(options);
+    }
+
+    public static void RegisterServices(this IServiceCollection services)
+    {
+      services.AddScoped<IAuthorService, AuthorService>();
+      services.AddScoped<IBookService, BookService>();
+      services.AddScoped<IPublisherService, PublisherService>();
     }
   }
 }
