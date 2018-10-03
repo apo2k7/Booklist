@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Models.ViewModels;
 using DataManagment.Services.Contracts;
+using Models.Identity;
 
 namespace Controllers
 {
@@ -12,10 +13,10 @@ namespace Controllers
     public class BookController : Controller
     {
         private IBookService _BookService;
-        private UserManager<IdentityUser> _UserManager;
+        private UserManager<ApplicationUser> _UserManager;
 
         public BookController(IBookService bookService,
-                                UserManager<IdentityUser> userManager)
+                                UserManager<ApplicationUser> userManager)
         {
             _BookService = bookService;
             _UserManager = userManager;

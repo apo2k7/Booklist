@@ -2,6 +2,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Models.Identity;
 using Models.ViewModels;
 
 namespace Controllers
@@ -9,14 +10,16 @@ namespace Controllers
     [AllowAnonymous]
     public class AuthController : Controller
     {
-        private UserManager<IdentityUser> _UserManager;
-        private SignInManager<IdentityUser> _SignInManager;
+        private UserManager<ApplicationUser> _UserManager;
+        private SignInManager<ApplicationUser> _SignInManager;
 
-        public AuthController(
-            UserManager<IdentityUser> userManager,
-            SignInManager<IdentityUser> signInManager)
+    public UserManager<ApplicationUser> UserManager { get => _UserManager; set => _UserManager = value; }
+
+    public AuthController(
+            UserManager<ApplicationUser> userManager,
+            SignInManager<ApplicationUser> signInManager)
         {
-            _UserManager = userManager;
+            UserManager = userManager;
             _SignInManager = signInManager;
         }
 
@@ -30,7 +33,7 @@ namespace Controllers
         [HttpPost]
         public async Task<IActionResult> Login(LoginViewModel model)
         {
-            var user = await _UserManager.FindByNameAsync(model.Username);
+            var user = await UserManager.FindByNameAsync(model.Username);
             if (user != null)
             {
                 var loginResult = await _SignInManager.PasswordSignInAsync(user, model.Password, isPersistent: false, lockoutOnFailure: false);
@@ -60,12 +63,12 @@ namespace Controllers
         {
             if (ModelState.IsValid)
             {
-                var user = new IdentityUser
+                var user = new ApplicationUser
                 {
                     UserName = model.Username,
                     Email = model.Email
                 };
-                var result = await _UserManager.CreateAsync(user, model.Password);
+                var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {
                     await _SignInManager.SignInAsync(user, isPersistent: false);

@@ -9,6 +9,7 @@ using DataManagment.Database.Contracts;
 using Models;
 using Models.ViewModels;
 using Models.Relations;
+using Models.Identity;
 
 namespace DataManagment.Services
 {
@@ -18,7 +19,9 @@ namespace DataManagment.Services
         private IAuthorService _AuthorService;
         private IApplicationContext _AppContext;
 
-        public BookService(IApplicationContext appContext, IPublisherService publisherService, IAuthorService authorService)
+        public BookService(IApplicationContext appContext, 
+                           IPublisherService publisherService, 
+                           IAuthorService authorService)
         {
             _AppContext = appContext;
             _PublisherService = publisherService;
@@ -71,7 +74,7 @@ namespace DataManagment.Services
             await Delete(book);
         }
 
-        public async Task CreateFromViewModel(BookEditViewModel model, IdentityUser user)
+        public async Task CreateFromViewModel(BookEditViewModel model, ApplicationUser user)
         {
             var book = new Book
             {

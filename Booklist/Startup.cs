@@ -14,7 +14,7 @@ namespace Booklist
     public Startup(IConfiguration config)
     {
       _Config = config;
-      ConnectionString = config.GetConnectionString("Default");
+      ConnectionString = config.GetConnectionString("DefaultConnection");
     }
 
     // This method gets called by the runtime. Use this method to add services to the container.
@@ -27,7 +27,7 @@ namespace Booklist
       services.RegisterServices();
 
       //Add DbContexts
-      services.AddDbContexts(options => options.UseSqlServer(ConnectionString));
+      services.AddDbContexts(options => options.UseSqlServer(ConnectionString, x=> x.MigrationsAssembly("Booklist")));
 
       //Configure database Context for Identity
       services.ConfigureIdentity();

@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using Models.Relations;
 using Microsoft.AspNetCore.Identity;
 using Models.Base;
+using Models.Identity;
 
 namespace Models
 {
@@ -22,7 +23,7 @@ namespace Models
     public bool Ebook { get; set; }
     public bool Lent { get; set; }
     public DateTime ReleaseYear { get; set; }
-    public IdentityUser User { get; set; }
+    public ApplicationUser User { get; set; }
     public Publisher Publisher { get; set; }
     public ICollection<BookAuthor> BookAuthors { get; set; }
     public ICollection<BookGenre> BookGenres { get; set; }

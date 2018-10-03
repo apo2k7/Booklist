@@ -6,6 +6,7 @@ using Models.Identity;
 using DataManagment.Database;
 using DataManagment.Services;
 using DataManagment.Services.Contracts;
+using DataManagment.Database.Contracts;
 
 namespace Microsoft.Extensions.DependencyInjection
 {
@@ -13,11 +14,13 @@ namespace Microsoft.Extensions.DependencyInjection
   {
     public static void ConfigureIdentity(this IServiceCollection services)
     {
-      services.AddIdentity<ApplicationUser, ApplicationRole>()
-        .AddEntityFrameworkStores<IdentityAppDbContext>()
-        .AddDefaultTokenProviders()
-        .AddUserStore<UserStore<ApplicationUser, ApplicationRole, IdentityAppDbContext, Guid>>()
-        .AddRoleStore<RoleStore<ApplicationRole, IdentityAppDbContext, Guid>>();
+      //services.AddIdentity<ApplicationUser, IdentityRole>()
+      //  .AddEntityFrameworkStores<ApplicationContext>()
+      //  .AddDefaultTokenProviders()
+      //  .AddUserStore<UserStore<ApplicationUser>>()
+      //  .AddRoleStore<RoleStore<IdentityRole>>();
+
+      services.AddDefaultIdentity<IdentityUser>().AddEntityFrameworkStores<IdentityDbContext>();
 
       services.Configure<IdentityOptions>(options =>
       {
@@ -30,8 +33,7 @@ namespace Microsoft.Extensions.DependencyInjection
     }
 
     public static void AddDbContexts(this IServiceCollection services, Action<DbContextOptionsBuilder> options){
-      services.AddDbContext<IdentityAppDbContext>(options);
-      services.AddDbContext<ApplicationDbContext>(options);
+      services.AddDbContext<IApplicationContext, ApplicationContext>(options);
     }
 
     public static void RegisterServices(this IServiceCollection services)
@@ -39,6 +41,8 @@ namespace Microsoft.Extensions.DependencyInjection
       services.AddScoped<IAuthorService, AuthorService>();
       services.AddScoped<IBookService, BookService>();
       services.AddScoped<IPublisherService, PublisherService>();
+      services.AddScoped<UserManager<ApplicationUser>>();
+      services.AddScoped<SignInManager<ApplicationUser>>();
     }
   }
 }
