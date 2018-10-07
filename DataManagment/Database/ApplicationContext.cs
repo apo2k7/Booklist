@@ -1,21 +1,19 @@
-﻿using System;
-using Models.Identity;
+﻿using Models.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
-using DataManagment.Database.Contracts;
 using Models;
 using System.Threading.Tasks;
 
 namespace DataManagment.Database
 {
 
-  public class ApplicationContext : IdentityDbContext<ApplicationUser>, IApplicationContext
+  public class ApplicationContext : IdentityDbContext<ApplicationUser>
   {
     public DbSet<Author> Authors { get; private set; }
     public DbSet<Book> Books { get; private set; }
     public DbSet<Publisher> Publishers { get; private set; }
 
-    public ApplicationContext(DbContextOptions<ApplicationContext> options)
+    public ApplicationContext(DbContextOptions options)
         : base(options)
     {
     }

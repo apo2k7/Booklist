@@ -1,12 +1,10 @@
 ﻿using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Models.Identity;
 using DataManagment.Database;
 using DataManagment.Services;
 using DataManagment.Services.Contracts;
-using DataManagment.Database.Contracts;
 
 namespace Microsoft.Extensions.DependencyInjection
 {
@@ -20,7 +18,8 @@ namespace Microsoft.Extensions.DependencyInjection
       //  .AddUserStore<UserStore<ApplicationUser>>()
       //  .AddRoleStore<RoleStore<IdentityRole>>();
 
-      services.AddDefaultIdentity<IdentityUser>().AddEntityFrameworkStores<IdentityDbContext>();
+      services.AddDefaultIdentity<ApplicationUser>()
+              .AddEntityFrameworkStores<ApplicationContext>();
 
       services.Configure<IdentityOptions>(options =>
       {
@@ -33,7 +32,7 @@ namespace Microsoft.Extensions.DependencyInjection
     }
 
     public static void AddDbContexts(this IServiceCollection services, Action<DbContextOptionsBuilder> options){
-      services.AddDbContext<IApplicationContext, ApplicationContext>(options);
+      services.AddDbContext<ApplicationContext>(options);
     }
 
     public static void RegisterServices(this IServiceCollection services)

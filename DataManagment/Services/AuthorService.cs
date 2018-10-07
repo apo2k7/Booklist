@@ -5,15 +5,15 @@ using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
 using Models;
 using DataManagment.Services.Contracts;
-using DataManagment.Database.Contracts;
+using DataManagment.Database;
 
 namespace DataManagment.Services
 {
   public class AuthorService : IAuthorService
     {
-        public IApplicationContext _AppContext { get; }
+        public ApplicationContext _AppContext { get; }
 
-        public AuthorService(IApplicationContext appContext)
+        public AuthorService(ApplicationContext appContext)
         {
             _AppContext = appContext;
         }
