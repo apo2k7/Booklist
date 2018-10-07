@@ -1,4 +1,5 @@
-﻿using System.IO;
+﻿using System;
+using System.IO;
 using Microsoft.Extensions.FileProviders;
 
 namespace Microsoft.AspNetCore.Builder
@@ -13,11 +14,16 @@ namespace Microsoft.AspNetCore.Builder
 
     public static IApplicationBuilder UseNodeModules(this IApplicationBuilder app, string rootPath)
     {
-      app.UseStaticFiles(new StaticFileOptions
+
+      if(Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT") != "Production")
       {
-        FileProvider = new PhysicalFileProvider(Path.Combine(rootPath, "node_modules")),
-        RequestPath = "/node_modules"
-      });
+        app.UseStaticFiles(new StaticFileOptions
+        {
+          FileProvider = new PhysicalFileProvider(Path.Combine(rootPath, "node_modules")),
+          RequestPath = "/node_modules"
+        });
+      }
+      
       return app;
     }
   }

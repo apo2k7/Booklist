@@ -13,12 +13,6 @@ namespace Microsoft.Extensions.DependencyInjection
   {
     public static void ConfigureIdentity(this IServiceCollection services)
     {
-      //services.AddIdentity<ApplicationUser, IdentityRole>()
-      //  .AddEntityFrameworkStores<ApplicationContext>()
-      //  .AddDefaultTokenProviders()
-      //  .AddUserStore<UserStore<ApplicationUser>>()
-      //  .AddRoleStore<RoleStore<IdentityRole>>();
-
       services.AddDefaultIdentity<ApplicationUser>()
               .AddEntityFrameworkStores<ApplicationContext>();
 
