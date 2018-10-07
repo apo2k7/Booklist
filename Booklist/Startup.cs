@@ -27,7 +27,7 @@ namespace Booklist
       services.RegisterServices();
 
       //Add DbContexts
-      services.AddDbContexts(options => options.UseSqlServer(ConnectionString, x=> x.MigrationsAssembly("Booklist")));
+      services.AddDbContexts(_Config);
 
       //Configure database Context for Identity
       services.ConfigureIdentity();
