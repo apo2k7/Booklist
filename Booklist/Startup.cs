@@ -9,12 +9,10 @@ namespace Booklist
   public class Startup
   {
     private IConfiguration _Config;
-    private readonly string ConnectionString;
 
     public Startup(IConfiguration config)
     {
       _Config = config;
-      ConnectionString = config.GetConnectionString("DefaultConnection");
     }
 
     // This method gets called by the runtime. Use this method to add services to the container.

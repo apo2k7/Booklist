@@ -1,0 +1,8 @@
+﻿<section class="borderd-section">
+  <h3>Genre</h3>
+  <div class="form-group">
+    <label asp-for="Genre" for="Genre"></label>
+    @*<select class="selectpicker"  asp-for="Genre" asp-items="Html.GetEnumSelectList<Genre>()" multiple data-width="100%"></select>*@
+    <span asp-validation-for="Genre" class="text-danger"></span>
+  </div>
+</section>

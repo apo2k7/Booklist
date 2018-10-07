@@ -6,5 +6,6 @@
   <PropertyGroup>
     <ActiveDebugProfile>Booklist</ActiveDebugProfile>
     <NameOfLastUsedPublishProfile>Booklist - Web Deploy</NameOfLastUsedPublishProfile>
+    <WebStackScaffolding_ViewDialogWidth>600</WebStackScaffolding_ViewDialogWidth>
   </PropertyGroup>
 </Project>

@@ -1,0 +1,31 @@
+﻿@model BookEditViewModel
+<section class="borderd-section">
+      <h3>Book</h3>
+      <div class="form-group">
+          <div class="form-group">
+              <label asp-for="Titel" for="Titel"></label>
+              <input asp-for="Titel" class="form-control" placeholder="Titel">
+              <span asp-validation-for="Titel" class="text-danger"></span>
+          </div>
+          <div class="form-group">
+              <label asp-for="Subtitel" for="Subtitel"></label>
+              <input asp-for="Subtitel" class="form-control" placeholder="Subtitel">
+              <span asp-validation-for="Subtitel" class="text-danger"></span>
+          </div>
+          <div class="form-group">
+              <label asp-for="Series" for="Series"></label>
+              <input asp-for="Series" class="form-control" placeholder="Series">
+              <span asp-validation-for="Series" class="text-danger"></span>
+          </div>
+          <div class="form-group">
+              <label asp-for="Seriesnumber" for="Seriesnumber"></label>
+              <input asp-for="Seriesnumber" class="form-control" placeholder="Seriesnumber">
+              <span asp-validation-for="Seriesnumber" class="text-danger"></span>
+          </div>
+          <div class="form-group">
+              <label asp-for="Isbn" for="Isbn"></label>
+              <input asp-for="Isbn" class="form-control" placeholder="Isbn">
+              <span asp-validation-for="Isbn" class="text-danger"></span>
+          </div>
+      </div>
+  </section>

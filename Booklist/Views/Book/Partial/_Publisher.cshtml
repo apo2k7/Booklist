@@ -1,0 +1,11 @@
+﻿@model BookEditViewModel
+
+
+<section class="borderd-section">
+  <h3>Publisher</h3>
+  <div class="form-group">
+    <label asp-for="PublisherName" for="PublisherName"></label>
+    <input asp-for="PublisherName" class="form-control" placeholder="PublisherName">
+    <span asp-validation-for="PublisherName" class="text-danger"></span>
+  </div>
+</section>
