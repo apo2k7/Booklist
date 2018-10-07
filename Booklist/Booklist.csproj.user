@@ -5,5 +5,6 @@
   </PropertyGroup>
   <PropertyGroup>
     <ActiveDebugProfile>Booklist</ActiveDebugProfile>
+    <NameOfLastUsedPublishProfile>Booklist - Web Deploy</NameOfLastUsedPublishProfile>
   </PropertyGroup>
 </Project>
